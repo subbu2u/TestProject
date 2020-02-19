@@ -1,0 +1,39 @@
+<div class="section">
+  <div class="section-body">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-head">
+                      <div class="header">Base Year</div>
+                      <div class="tools"></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="card-head">
+                    <div class="col-md-3"><h1>Country</h1></div>
+                    <div class="col-md-3"><h1>City</h1></div>
+                    <div class="col-md-3 " style="text-align: right;"><h1>Minimum Temperature</h1></div>
+                    <div class="col-md-3" style="text-align: right;"><h1>Maximum Temperature</h1></div>
+                  </div>
+                    <div class="col-md-12">
+                      <div class="row" *ngFor="let thisMetro of MetroList">
+                        <div class="col-md-3">{{ thisMetro.sys.country }}</div>
+                        <div class="col-md-3" style="text-align: left;">
+                          <!-- <a routerLink="['/Forcast30', thisMetro.id]"> -->
+                          <a routerLink="/Forcast30/{{thisMetro.id}}">
+                              {{ thisMetro.name }}
+                          </a>                
+                        </div>      
+                        <div class="col-md-3" style="text-align: right;">{{ thisMetro.main.temp_min }}</div>
+                        <div class="col-md-3" style="text-align: right;">{{ thisMetro.main.temp_max }}</div>
+                      </div>  
+                  </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>

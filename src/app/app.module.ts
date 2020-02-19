@@ -4,15 +4,22 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HttpClient } from '@angular/common/http';
+import { ForcastDetailComponent } from './forcast-detail/forcast-detail.component';
+import { MetroListComponent } from './metro-list/metro-list.component';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MetroListComponent,
+    ForcastDetailComponent   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule 
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HttpClient],
+  bootstrap: [MetroListComponent]
 })
 export class AppModule { }
